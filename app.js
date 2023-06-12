@@ -1,11 +1,10 @@
 const cards = document.getElementById("cards");
 
 async function displayProducts() {
-  const products = await fetch("https://fakestoreapi.com/products?limit=12");
+  const products = await fetch("https://fakestoreapi.com/products?limit=6");
   const productsData = await products.json();
 
   const pData = productsData.map((product) => {
-    console.log(product);
     return `
 
 <article
@@ -44,3 +43,10 @@ async function displayProducts() {
 }
 
 displayProducts();
+
+function addProducts(e) {
+  e.preventDefault();
+  const Pname = document.getElementById("pname").value;
+  console.log(Pname);
+  console.log("avbagsvagK", Pname);
+}
