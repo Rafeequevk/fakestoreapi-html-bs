@@ -31,7 +31,7 @@
         <div
           class="d-flex justify-content-center align-items-center py-4 border"
         >
-          <form action="" onsubmit="addProducts()" method="get" class="border">
+          <form action="" method="get" class="">
             <div class="row mb-3">
               <div class="col-2">
                 <label for="pname" class="col-form-label"> Name</label>
@@ -99,10 +99,13 @@
               </div>
             </div>
             <div class="row">
-              <div class="col d-flex flex-row-reverse">
-                <button type="submit" class="btn btn-primary">
+              <div
+                class="col d-flex justify-content-between align-items-center"
+              >
+                <button type="button" class="btn btn-primary" id="submitBtn">
                   Add Product
                 </button>
+                <span class="text-success fs-4 d-none" id="status">fsDg</span>
               </div>
             </div>
           </form>

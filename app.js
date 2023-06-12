@@ -44,9 +44,44 @@ async function displayProducts() {
 
 displayProducts();
 
-function addProducts(e) {
-  e.preventDefault();
-  const Pname = document.getElementById("pname").value;
-  console.log(Pname);
-  console.log("avbagsvagK", Pname);
+async function addProducts() {
+  const pName = document.getElementById("pname").value;
+  const price = document.getElementById("price").value;
+  const category = document.getElementById("category").value;
+  const desc = document.getElementById("desc").value;
+  const ImgLink = document.getElementById("imglink").value;
+  const status = document.getElementById("status");
+
+  const data = {
+    title: pName,
+    price: price,
+    description: desc,
+    image: ImgLink,
+    category: category,
+  };
+
+  const response = await fetch("https://fakestoreapi.com/products", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  var datas = await response.json();
+  console.log(datas);
+  console.log(response.ok);
+  if (response.ok) {
+    status.classList.add("d-block");
+    status.classList.remove("d-none");
+
+    status.innerHTML = "Product Addes Succesfully...!";
+  } else {
+    status.classList.add("text-danger");
+    status.classList.remove("text-success");
+    status.innerText = "";
+  }
 }
+
+const submitBtn = document.getElementById("submitBtn");
+
+submitBtn.addEventListener("click", addProducts);
