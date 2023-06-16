@@ -8,8 +8,8 @@ async function displayProducts() {
     return `
 
 <article
-            class="col border w-20 ms-5 mt-4 rounded-4"
-            style="width: 17%"
+            class="col-lg-2 col-md-4 border ms-3 mt-4 rounded-4"
+            style="width: 290px"
           >
 
           <div class = "" > 
@@ -20,7 +20,7 @@ async function displayProducts() {
             />
             </div>
             <hr />
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center ">
               <h5 class="my-1">${product.title}</h5>
               <h5 class="my-1">$${product.price}</h5>
             </div>
